@@ -1,0 +1,122 @@
+/* Basic Reset & Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #202124; /* Dark background like screenshot */
+    color: #e8eaed; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    padding-top: 20px; /* Add some space at the top */
+}
+
+/* Container for the whole app */
+.app-container {
+    width: 90%;
+    max-width: 500px; /* Max width for the flashcard area */
+    text-align: center;
+}
+
+h1 {
+    color: #bdc1c6; /* Slightly dimmer heading */
+    margin-bottom: 25px;
+    font-weight: normal;
+    text-align: left; /* Align title left like screenshot */
+    padding-left: 10px; /* Add padding to align with cards */
+}
+
+.flashcard-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between cards */
+}
+
+/* Individual Flashcard Styling */
+.flashcard {
+    background-color: transparent; /* No background on the container itself */
+    min-height: 150px; /* Minimum height for a card */
+    width: 100%;
+    perspective: 1000px; /* For 3D flip effect */
+    cursor: pointer;
+    border-radius: 10px; /* Match card face radius */
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 150px; /* Ensure inner takes at least this height */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 10px; /* Rounded corners for the flipping element */
+}
+
+/* Apply flip transformation when .flashcard is clicked/tapped */
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+/* Styling for Front and Back faces */
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    background-color: #3c4043; /* Card background color */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.3em; /* Adjust font size as needed */
+    text-align: center;
+    min-height: 150px; /* Ensure faces also have min height */
+    border: 1px solid #5f6368; /* Subtle border */
+}
+
+/* Specific styling for the front (term) */
+.flashcard-front {
+    color: #e8eaed;
+}
+
+/* Specific styling for the back (explanation + port) */
+.flashcard-back {
+    color: #e8eaed;
+    transform: rotateY(180deg); /* Hide back face initially */
+}
+
+.flashcard-back .explanation {
+    font-size: 0.9em; /* Smaller font for explanation */
+    margin-bottom: 15px;
+    color: #bdc1c6; /* Slightly dimmer text for explanation */
+}
+
+.flashcard-back .port-number {
+    font-size: 1em;
+    font-weight: bold;
+    color: #8ab4f8; /* Blueish color for port number */
+}
+
+/* Style the blue outline shown on the 'active' card in the screenshot */
+/* This is tricky to replicate exactly without JS knowing which card is 'active' */
+/* Let's add it to the first card for visual similarity */
+.flashcard:first-child .flashcard-front {
+   border: 2px solid #8ab4f8; /* Blue border like screenshot example */
+}
+
+/* Add hover effect (optional, better for desktop) */
+@media (hover: hover) {
+    .flashcard:hover .flashcard-inner {
+       /* Optional: Slight scale or shadow effect on hover */
+       /* transform: scale(1.02); */
+    }
+}
