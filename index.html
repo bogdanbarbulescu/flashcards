@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Port Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Flashcard Maker</h1>
+
+        <div class="flashcard-area">
+
+            <!-- Card 1: FTP -->
+            <div class="flashcard" ontouchstart="this.classList.toggle('hover');">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>FTP (File Transfer Protocol) Control</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p class="explanation">Transfers file data between a client and server (Control commands).</p>
+                        <p class="port-number">Port: 21</p>
+                        <p class="port-number">(Data connection often uses Port 20)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: SSH -->
+            <div class="flashcard" ontouchstart="this.classList.toggle('hover');">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>SSH (Secure Shell)</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p class="explanation">Provides secure remote login, file transfer (SFTP), and port forwarding.</p>
+                        <p class="port-number">Port: 22</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Telnet -->
+            <div class="flashcard" ontouchstart="this.classList.toggle('hover');">
+                 <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                         <p>Telnet</p>
+                     </div>
+                     <div class="flashcard-back">
+                         <p class="explanation">Provides unencrypted remote login and terminal access.</p>
+                         <p class="port-number">Port: 23</p>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Card 4: SMTP -->
+            <div class="flashcard" ontouchstart="this.classList.toggle('hover');">
+                <div class="flashcard-inner">
+                   <div class="flashcard-front">
+                        <p>SMTP (Simple Mail Transfer Protocol)</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p class="explanation">Used for sending email messages between servers.</p>
+                        <p class="port-number">Port: 25</p>
+                    </div>
+                </div>
+           </div>
+
+           <!-- Card 5: DNS -->
+           <div class="flashcard" ontouchstart="this.classList.toggle('hover');">
+                <div class="flashcard-inner">
+                   <div class="flashcard-front">
+                        <p>DNS (Domain Name System)</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p class="explanation">Translates human-readable domain names (like www.google.com) into IP addresses.</p>
+                        <p class="port-number">Port: 53 (UDP/TCP)</p>
+                    </div>
+                </div>
+           </div>
+
+           <!-- Card 6: HTTP -->
+           <div class="flashcard" ontouchstart="this.classList.toggle('hover');">
+                <div class="flashcard-inner">
+                   <div class="flashcard-front">
+                        <p>HTTP (Hypertext Transfer Protocol)</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p class="explanation">The foundation of data communication for the World Wide Web (unencrypted web traffic).</p>
+                        <p class="port-number">Port: 80</p>
+                    </div>
+                </div>
+           </div>
+
+           <!-- Card 7: HTTPS -->
+           <div class="flashcard" ontouchstart="this.classList.toggle('hover');">
+                 <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                         <p>HTTPS (HTTP Secure)</p>
+                     </div>
+                     <div class="flashcard-back">
+                         <p class="explanation">Provides encrypted communication over HTTP, used for secure web traffic.</p>
+                         <p class="port-number">Port: 443</p>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Add more cards here following the same structure -->
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
